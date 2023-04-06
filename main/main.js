@@ -1,11 +1,19 @@
+
+let mydata = [{id:1,name:"My-PC",icon:"My-PC.png"},{id:2,name:"Firefox",icon:"firefox.png"},{id:3,name:"Microsoft Edge",icon:"Edge.png"},{id:4,name:"Mincraft",icon:"Mincraft.png"},{id:5,name:"Safe",icon:"Safe.png"},{id:6,name:"Youtube",icon:"Youtube.png"},{id:7,name:"STR",icon:"Str.png"}]
 // get data from json file and store it in IconsData
 let IconsData = [];
 let newAsync = []
 
-fetch('../data/data.json').then(res => res.json()).then(data => data.map(item => IconsData.push(item))).catch(error => console.error(error));
+// fetch('../data/data.json').then(res => res.json()).then(data => data.map(item => IconsData.push(item))).catch(error => console.error(error));
+fetch('https://raw.githubusercontent.com/AbdulrahmanM0/data/main/data.json')
+  .then(res => res.json())
+  .then(data => data.map(item => IconsData.push(item)))
+  .catch(error => console.error(error));
+
+
 async function fetchData() {
     try {
-        const response = await fetch('../data/data.json');
+        const response = await fetch('https://raw.githubusercontent.com/AbdulrahmanM0/data/main/data.json');
         const data = await response.json();
         return data;
     } catch (error) {
@@ -99,17 +107,17 @@ listStart.onclick = (e) =>{
         if(e.target.id == "online-writing" || e.target.innerText == 'Online Writing'){
             console.log('YOU DID OPEN WRITING SITE');
             writeWindow = window.open('https://www.plotgrid.app/?gclid=Cj0KCQjwla-hBhD7ARIsAM9tQKuFgJA4zRO2v5DUvfVfCR4CA7B3aj3q7tV3uN2rCaIejSjXEOvasbcaAidyEALw_wcB#/app','writeWindow',`width=${fullScreenWidth},height=${fullScreenHeight}`);
-            opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=Writer class=footer-icon src=../assets/icons/writing.png /></div>`
+            opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=Writer class=footer-icon src=assets/icons/writing.png /></div>`
         }
         if(e.target.id == "firefox" || e.target.innerText == 'Firefox'){
             console.log('YOU DID OPEN FIREFOX');
             foxWindow = window.open('https://www.google.com/','foxWindow',`width=${fullScreenWidth},height=${fullScreenHeight}`)
-            opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=${IconsData[1].id} class=footer-icon src=../assets/icons/${IconsData[1].icon} /></div>`
+            opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=${mydata[1].id} class=footer-icon src=assets/icons/${mydata[1].icon} /></div>`
         }
         if(e.target.id == "Mincraft" || e.target.innerText == 'Mincraft'){
             console.log('YOU DID OPEN MINECRAFT')
             craftWindow = window.open('https://classic.minecraft.net/','craftWindow',`width=${fullScreenWidth},height=${fullScreenHeight}`)
-            opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=${IconsData[3].id} class=footer-icon src=../assets/icons/${IconsData[3].icon} /></div>`
+            opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=${mydata[3].id} class=footer-icon src=assets/icons/${mydata[3].icon} /></div>`
         }
     }else{
         opendIcons.innerHTML += '<h3 style=color:red >TOO MANY ICONS</h3>';
@@ -126,37 +134,37 @@ gridIcons.ondblclick = (e) => {
             if(e.target.id == 1){
                 console.log('YOU DID OPEN YOUR PC AGAIN!!!');
                 pcWindow = window.open('../index.html','pcWindow',`width=${fullScreenWidth},height=${fullScreenHeight}`);
-                opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=${IconsData[0].id} class=footer-icon src=../assets/icons/${IconsData[0].icon} /></div>`
+                opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=${mydata[0].id} class=footer-icon src=assets/icons/${mydata[0].icon} /></div>`
             }
             if(e.target.id == 2){
                 console.log('YOU DID OPEN FIREFOX!!!');
                 foxWindow = window.open('https://www.google.com/','foxWindow',`width=${fullScreenWidth},height=${fullScreenHeight}`)
-                opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=${IconsData[1].id} class=footer-icon src=../assets/icons/${IconsData[1].icon} /></div>`
+                opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=${mydata[1].id} class=footer-icon src=assets/icons/${mydata[1].icon} /></div>`
             }
             if(e.target.id == 3){
                 console.log('YOU DID OPEN EDGE!!!');
                 foxWindow = window.open('https://www.google.com/','edgeWindow',`width=${fullScreenWidth},height=${fullScreenHeight}`)
-                opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=${IconsData[2].id} class=footer-icon src=../assets/icons/${IconsData[2].icon} /></div>`
+                opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=${mydata[2].id} class=footer-icon src=assets/icons/${mydata[2].icon} /></div>`
             }
             if(e.target.id == 4){
                 console.log('YOU DID OPEN MINECRAFT!!!');
                 craftWindow = window.open('https://classic.minecraft.net/','craftWindow',`width=${fullScreenWidth},height=${fullScreenHeight}`)
-                opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=${IconsData[3].id} class=footer-icon src=../assets/icons/${IconsData[3].icon} /></div>`
+                opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=${mydata[3].id} class=footer-icon src=assets/icons/${mydata[3].icon} /></div>`
             }
             if(e.target.id == 5){
                 console.log('YOU DID OPEN MY SAFE :) ');
-                safWindow = window.open('../safe/safe.html','safWindow',`width=${fullScreenWidth},height=${fullScreenHeight}`)
-                opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=${IconsData[4].id} class=footer-icon src=../assets/icons/${IconsData[4].icon} /></div>`
+                safWindow = window.open('safe/safe.html','safWindow',`width=${fullScreenWidth},height=${fullScreenHeight}`)
+                opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=${mydata[4].id} class=footer-icon src=assets/icons/${mydata[4].icon} /></div>`
             }
             if(e.target.id == 6){
                 console.log('YOU DID OPEN YOUTUBE!!!');
                 tubeWindow = window.open('https://www.youtube.com/','tubeWindow',`width=${fullScreenWidth},height=${fullScreenHeight}`)
-                opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=${IconsData[5].id} class=footer-icon src=../assets/icons/${IconsData[5].icon} /></div>`
+                opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=${mydata[5].id} class=footer-icon src=assets/icons/${mydata[5].icon} /></div>`
             }
             if(e.target.id == 7){
                 console.log('YOU DID OPEN SKETCH!!!');
                 sketchWindow = window.open('https://sketch.io/sketchpad/','sketchWindow',`width=${fullScreenWidth},height=${fullScreenHeight}`)
-                opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=${IconsData[6].id} class=footer-icon src=../assets/icons/${IconsData[6].icon} /></div>`
+                opendIcons.innerHTML += `<div class=footer-icon-container><span class=close-Icon >X</span><img id=${mydata[6].id} class=footer-icon src=assets/icons/${mydata[6].icon} /></div>`
             }
         }
     }
@@ -165,13 +173,13 @@ gridIcons.ondblclick = (e) => {
 // close and focuse window
 opendIcons.onclick = (e) => {
     if(e.target.classList.contains('close-Icon')){
-        if(e.target.nextElementSibling.id == IconsData[3].id){
+        if(e.target.nextElementSibling.id == mydata[3].id){
             craftWindow.close();
         }
         if(e.target.nextElementSibling.id == "Writer"){
             writeWindow.close();
         }
-        if(e.target.nextElementSibling.id == IconsData[1].id){
+        if(e.target.nextElementSibling.id == mydata[1].id){
             foxWindow.close();
         }
         if(e.target.nextElementSibling.id == 1){
@@ -200,13 +208,13 @@ opendIcons.onclick = (e) => {
 
 // you know what my eyes hurt right now (*-*)  <<====================
 
-    if(e.target.id == IconsData[3].id){
+    if(e.target.id == mydata[3].id){
         craftWindow.focus();
     }
     if(e.target.id == "Writer"){
         writeWindow.focus()
     }
-    if(e.target.id == IconsData[1].id){
+    if(e.target.id == mydata[1].id){
         foxWindow.focus();
     }
     if(e.target.id == 1){
@@ -237,7 +245,7 @@ opendIcons.onclick = (e) => {
 const DateTime = document.getElementsByClassName("data&time")[0];
 let date = new Date();
 let amORpm = date.getHours > 12 ? "AM":"PM";
-let hours =date.getHours();
+let hours = date.getHours();
 let minutes = date.getMinutes();
     if(hours > 12){
         hours = hours - 12;
@@ -288,9 +296,14 @@ let actives
 (async function() {
     const newAsync = await fetchData();
     // console.log(newAsync); // use data here
-    newAsync.map(items => gridIcons.innerHTML += `<div class=icon-container ><img id=${items.id} class='iconImg'  src='../assets/icons/${items.icon}' alt=icon /><p class=icon-name >${items.name}</p></div>`)
+    newAsync.map(items => gridIcons.innerHTML += `<div class=icon-container ><img id=${items.id} class='iconImg'  src='assets/icons/${items.icon}' alt=icon /><p class=icon-name >${items.name}</p></div>`)
     actives = document.querySelectorAll('.iconImg')
 })();
+//////////////////////////////////////
+mydata.map(items => gridIcons.innerHTML += `<div class=icon-container ><img id=${items.id} class='iconImg'  src='assets/icons/${items.icon}' alt=icon /><p class=icon-name >${items.name}</p></div>`)
+actives = document.querySelectorAll('.iconImg');
+//////////////////////////////////////
+
 
 unActiveIcon = () => {
     actives.forEach(a=>a.classList.remove('active-icon'));
@@ -398,4 +411,3 @@ console.log(`
 ██║░╚═╝░██║╚█████╔╝██║░░██║██║░░██║██║░╚═╝░██║██║░╚═╝░██║███████╗██████╔╝
 ╚═╝░░░░░╚═╝░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═╝░░░░░╚═╝╚══════╝╚═════╝░
 `)
-
