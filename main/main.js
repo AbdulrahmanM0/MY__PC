@@ -5,10 +5,10 @@ let IconsData = [];
 let newAsync = []
 
 // fetch('../data/data.json').then(res => res.json()).then(data => data.map(item => IconsData.push(item))).catch(error => console.error(error));
-fetch('https://raw.githubusercontent.com/AbdulrahmanM0/data/main/data.json')
-  .then(res => res.json())
-  .then(data => data.map(item => IconsData.push(item)))
-  .catch(error => console.error(error));
+// fetch('https://raw.githubusercontent.com/AbdulrahmanM0/data/main/data.json')
+//   .then(res => res.json())
+//   .then(data => data.map(item => IconsData.push(item)))
+//   .catch(error => console.error(error));
 
 
 async function fetchData() {
@@ -293,12 +293,12 @@ cWifi.onclick = () => {
 
 // Read icons on the DESK
 let actives
-(async function() {
-    const newAsync = await fetchData();
-    // console.log(newAsync); // use data here
-    newAsync.map(items => gridIcons.innerHTML += `<div class=icon-container ><img id=${items.id} class='iconImg'  src='assets/icons/${items.icon}' alt=icon /><p class=icon-name >${items.name}</p></div>`)
-    actives = document.querySelectorAll('.iconImg')
-})();
+// (async function() {
+//     const newAsync = await fetchData();
+//     // console.log(newAsync); // use data here
+//     newAsync.map(items => gridIcons.innerHTML += `<div class=icon-container ><img id=${items.id} class='iconImg'  src='assets/icons/${items.icon}' alt=icon /><p class=icon-name >${items.name}</p></div>`)
+//     actives = document.querySelectorAll('.iconImg')
+// })();
 //////////////////////////////////////
 mydata.map(items => gridIcons.innerHTML += `<div class=icon-container ><img id=${items.id} class='iconImg'  src='assets/icons/${items.icon}' alt=icon /><p class=icon-name >${items.name}</p></div>`)
 actives = document.querySelectorAll('.iconImg');
