@@ -279,13 +279,13 @@ connection.onclick = () => {
 }
 cWifi.onclick = () => {
     if(cWifi.childNodes[0].id == connectedID){
-        connection.src = '../assets/wifi/icons8-wi-fi-connected-96.png';
-        cWifi.childNodes[0].src = '../assets/wifi/icons8-wi-fi-off-100.png';
+        connection.src = 'assets/wifi/icons8-wi-fi-connected-96.png';
+        cWifi.childNodes[0].src = 'assets/wifi/icons8-wi-fi-off-100.png';
         cWifi.childNodes[1].innerHTML = 'Close';
         cWifi.childNodes[0].id = unConnectedID;
     }else if(cWifi.childNodes[0].id == unConnectedID){
-        connection.src = '../assets/wifi/icons8-wi-fi-off-100.png';
-        cWifi.childNodes[0].src = '../assets/wifi/icons8-wi-fi-connected-96.png';
+        connection.src = 'assets/wifi/icons8-wi-fi-off-100.png';
+        cWifi.childNodes[0].src = 'assets/wifi/icons8-wi-fi-connected-96.png';
         cWifi.childNodes[1].innerHTML = 'TOFI';
         cWifi.childNodes[0].id = connectedID;
     }
