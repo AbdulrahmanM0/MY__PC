@@ -3,7 +3,9 @@ let mydata = [{id:1,name:"My-PC",icon:"My-PC.png"},{id:2,name:"Firefox",icon:"fi
 // get data from json file and store it in IconsData
 let IconsData = [];
 let newAsync = []
-
+                    ///////////////////////////////////
+//                     THIS CODE IS WORKING ALSO
+                    ///////////////////////////////////
 // fetch('../data/data.json').then(res => res.json()).then(data => data.map(item => IconsData.push(item))).catch(error => console.error(error));
 // fetch('https://raw.githubusercontent.com/AbdulrahmanM0/data/main/data.json')
 //   .then(res => res.json())
@@ -293,6 +295,11 @@ cWifi.onclick = () => {
 
 // Read icons on the DESK
 let actives
+
+
+                    ///////////////////////////////////
+//                     THIS CODE IS WORKING ALSO
+                    ///////////////////////////////////
 // (async function() {
 //     const newAsync = await fetchData();
 //     // console.log(newAsync); // use data here
