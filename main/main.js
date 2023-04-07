@@ -208,7 +208,7 @@ opendIcons.onclick = (e) => {
     e.target.parentElement.remove();
     }
 
-// you know what my eyes hurt right now (*-*)  <<====================
+// you know what my eyes hurt  (*-*)  <<====================
 
     if(e.target.id == mydata[3].id){
         craftWindow.focus();
@@ -361,6 +361,7 @@ let sTimer;
 randomPoint.onmouseover = () => {
     sTimer=setTimeout(()=>{
         // deskTop.classList.add('newDesk');
+      window.open('https://abdulrahmanm0.github.io/DC-game/','_blank')
         deskTop.innerHTML += `<video autoplay muted loop id="myVideo">
                                 <source src="assets/GG/ggv.mp4" type="video/mp4">
                             </video>`
