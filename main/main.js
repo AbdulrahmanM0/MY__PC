@@ -369,9 +369,13 @@ randomPoint.onmouseover = () => {
                                 <source src='assets/GG/ggm.mp4' type='audio/mp3'>
                             </audio>`;
         deskTop.appendChild(sendMSG);
+        
         music.childNodes[0].play();
         randomPoint.remove();
     },8000)
+    sendMSG.onclick = () => {
+      window.open('https://abdulrahmanm0.github.io/DC-game/','_blank')
+    }
     console.log(`
                 ▄               ▄    ______________________  
                 ▌▒█           ▄▀▒▌  | I WAS HERE 4/6/2023 |
