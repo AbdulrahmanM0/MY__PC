@@ -356,7 +356,8 @@ let music = document.getElementById('music');
 let deskTop = document.getElementsByClassName('desktop')[0];
 let sendMSG = document.createElement('div');
 sendMSG.classList.add('inputMsg');
-sendMSG.innerHTML = `<form action="mailto:gabdulrahman.mohammed@gmail.com" method="post" enctype="text/plain"><div style=color:#000;margin-bottom:10px; >Let me know your name LEGEND (*o*)</div><input type=text placeholder=Enter-your-name name=name /><button type=submit >Submit</button></form>`;
+sendMSG.innerHTML = `<form action="mailto:gabdulrahman.mohammed@gmail.com" method="post" enctype="text/plain"><div style=color:#000;margin-bottom:10px; >Let me know your name LEGEND (*o*)</div><input onclick='(event){event.stopPropagation()
+}' type=text placeholder=Enter-your-name name=name /><button type=submit >Submit</button></form>`;
 let sTimer;
 randomPoint.onmouseover = () => {
     sTimer=setTimeout(()=>{
